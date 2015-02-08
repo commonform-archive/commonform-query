@@ -13,3 +13,5 @@ module.exports = function(string) {
   }
   return false;
 };
+
+module.exports.version =  '0.0.0-prerelease';
