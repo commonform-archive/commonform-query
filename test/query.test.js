@@ -42,4 +42,9 @@ describe('query parsing', function() {
         }]);
     });
   });
+
+  it('returns false for no match', function() {
+    expect(query('nonsense'))
+      .to.be.false();
+  });
 });
