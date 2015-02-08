@@ -13,6 +13,15 @@ describe('query parsing', function() {
         }]);
     });
 
+    it('ignores extraneous space', function() {
+      expect(query('definitions   of   Claim'))
+        .to.eql([{
+          subject: {type: 'form', identifier: 'x'},
+          predicate: 'defines',
+          object: {type: 'term', value: 'Claim'}
+        }]);
+    });
+
     it('definitions of "Claim"', function() {
       expect(query('definitions of "Claim"'))
         .to.eql([{
